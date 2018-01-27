@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	void OnCollisionEnter(Collision coll) {
-		Debug.Log ("Hit a wall!");
+		Debug.Log ("Hit something");
+		transform.parent.GetComponent<PlayerControl>().ReturnAfterDeath ();
 	}
 }
