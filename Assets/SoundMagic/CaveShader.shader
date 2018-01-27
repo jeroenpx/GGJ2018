@@ -16,12 +16,12 @@
         _Speed ("Speed (units/second)", Float) = 1
         _FadeOutDistance ("Fade Out Distance (units)", Float) = 10
 
+        _WaveEffectTime ("How long does the Burst last? (seconds)", Float) = 2
         _AfterEffectFadeOutTime ("After Burst Energy Fade Out (seconds)", Float) = 10
 
         // Burst information
         _TimeManual ("Time (set by script)", Float) = 0
         _TimeStart ("Time Start (set by script)", Float) = 0
-        _TimeEnd ("Time End (set by script)", Float) = 0
         _PreviousTimeStart ("Time Start of Previous Effect (set by script)", Float) = 0
 
         // Local Blackness
@@ -101,13 +101,13 @@
 		float _FadeOutDistance;
 		float _TimeManual;
 		float _TimeStart;
-		float _TimeEnd;
-		float _PreviousTimeEnd;
+		float _PreviousTimeStart;
+		float _WaveEffectTime;
 
 		float _AfterEffectFadeOutTime;
 
 		float _LocalAlwaysLightRange;
-		float _LocalAlwaysLightColor;
+		fixed4 _LocalAlwaysLightColor;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
 		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
@@ -133,16 +133,18 @@
 			half4 minBlackness = saturate(1-curDistance/_LocalAlwaysLightRange)*_LocalAlwaysLightColor;
 
 			// Sine start & end
+			float timeEnd = _TimeStart + _WaveEffectTime;
 			float startPointDist = _Speed*(_TimeManual-_TimeStart);
-			float endPointDist = _Speed*(_TimeManual-_TimeEnd);
+			float endPointDist = _Speed*(_TimeManual-timeEnd);
 			if(curDistance<startPointDist && curDistance>endPointDist) {
 				o.Albedo = c.rgb;
 				o.Alpha = c.a;
 			} else if(curDistance>=startPointDist) {
-				float previousEndPointDist = _Speed*(_TimeManual-_PreviousTimeEnd);
+				float previousTimeEnd = _PreviousTimeStart + _WaveEffectTime;
+				float previousEndPointDist = _Speed*(_TimeManual-previousTimeEnd);
 				if(curDistance<previousEndPointDist) {
 					// Old after effect
-					float timeWavePassed = _TimeManual-_PreviousTimeEnd;
+					float timeWavePassed = _TimeManual-previousTimeEnd;
 					float percentAfterEffect = saturate(1-timeWavePassed/_AfterEffectFadeOutTime);
 					o.Albedo = minBlackness.rgb + _Back.rgb * percentAfterEffect;
 					o.Alpha = minBlackness.a + _Back.a * percentAfterEffect;
@@ -153,7 +155,7 @@
 				}
 			} else {
 				// New after effect
-				float timeWavePassed = _TimeManual-_TimeEnd;
+				float timeWavePassed = _TimeManual-timeEnd;
 				float percentAfterEffect = saturate(1-timeWavePassed/_AfterEffectFadeOutTime);
 				o.Albedo = minBlackness.rgb + _Back.rgb * percentAfterEffect;
 				o.Alpha = minBlackness.a + _Back.a * percentAfterEffect;
