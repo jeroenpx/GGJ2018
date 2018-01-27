@@ -14,6 +14,8 @@ public class SoundMagicController : MonoBehaviour {
 	private GameObject[] crystals;
 	private bool[] activatedByWave;
 
+	public AudioSource burstAudioEffect;
+
 	void Start() {
 		startTime = -1000;
 		previousStartTime = -1000;
@@ -26,6 +28,9 @@ public class SoundMagicController : MonoBehaviour {
 		// Find all crystals
 		crystals = GameObject.FindGameObjectsWithTag("Crystal");
 		activatedByWave = new bool[crystals.Length];
+
+		// Play sound
+		burstAudioEffect.Play();
 	}
 
 	void Update() {

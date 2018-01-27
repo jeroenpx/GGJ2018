@@ -42,7 +42,7 @@
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
-		UsePass "Standard"
+		UsePass "custom/Cg two-sided per-vertex lighting"
 	}
 	FallBack "Diffuse"
 }

@@ -19,6 +19,9 @@ public class CombinationPostProcessing : MonoBehaviour {
 	// The Material to combine both renders
 	public Material combinationMaterial;
 
+	public bool enableWaves;
+	public bool enableEmit;
+
 	void Awake() {
 		// Get the camera
 		cam = GetComponent<Camera> ();
@@ -52,8 +55,14 @@ public class CombinationPostProcessing : MonoBehaviour {
 			internalCam.Render ();
 
 			// Combine stuff now.
+			if(enableWaves && enableEmit) {
 			combinationMaterial.SetTexture("_EmitTex", caveLightRender);
 			Graphics.Blit(src, dest, combinationMaterial);
+			}else if(enableEmit) {
+				Graphics.Blit(caveLightRender, dest);
+			} else {
+				Graphics.Blit(src, dest);
+			}
 
 		} finally {
 			caveLightRender.Release();

@@ -14,6 +14,7 @@
 		_SourcePoint ("SourcePoint", Vector) = (0, 0, 0, 0)
         _SineDistance ("Sine Distance (units)", Float) = 1
         _Speed ("Speed (units/second)", Float) = 1
+        _SpeedInterference ("Speed of Interference (units/second)", Float) = 1
         _FadeOutDistance ("Fade Out Distance (units)", Float) = 10
 
         _WaveEffectTime ("How long does the Burst last? (seconds)", Float) = 2
@@ -101,6 +102,7 @@
 		fixed4 _Back;
 		float _SineDistance;
 		float _Speed;
+		float _SpeedInterference;
 		float _FadeOutDistance;
 		float _TimeManual;
 		float _TimeStart;
@@ -125,7 +127,7 @@
 			// Distance from source
 			float curDistance = distance(_SourcePoint.xyz, IN.worldPos);
 
-			float timeMovement = _TimeManual * _Speed / _SineDistance;
+			float timeMovement = _TimeManual * _SpeedInterference / _SineDistance;
 
 			// It looks more black in the distance
 			float fadeOutFactor = saturate(1-curDistance/_FadeOutDistance);
