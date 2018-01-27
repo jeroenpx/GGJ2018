@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: f9d17dfa71ec2f8419f645a27a9de70d
+timeCreated: 1517084082
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Base_jnt
+    100002: //RootNode
+    100004: Clavicle_L_jnt
+    100006: Clavicle_R_jnt
+    100008: Ear_L_jnt
+    100010: Ear_R_jnt
+    100012: Elbow_L_jnt
+    100014: Elbow_R_jnt
+    100016: Foot_L_jnt
+    100018: Foot_R_jnt
+    100020: Hand_L_jnt
+    100022: Hand_R_jnt
+    100024: Knee_L_jnt
+    100026: Knee_R_jnt
+    100028: Leg_L_jnt
+    100030: Leg_R_jnt
+    100032: Neck_jnt
+    100034: Shoulder_L_jnt
+    100036: Shoulder_R_jnt
+    100038: Spine1_jnt
+    100040: Spine2_jnt
+    100042: Spine3_jnt
+    100044: Thumb_L_Jnt
+    100046: Thumb_R_Jnt
+    100048: ThumbKnuckle_L_jnt
+    100050: ThumbKnuckle_R_jnt
+    100052: Toe1_L_jnt
+    100054: Toe1_R_jnt
+    100056: Toe2_L_jnt
+    100058: Toe2_R_jnt
+    100060: Toe3_L_jnt
+    100062: Toe3_R_jnt
+    100064: Toe4_L_jnt
+    100066: Toe4_R_jnt
+    100068: Toe5_L_jnt
+    100070: Toe5_R_jnt
+    100072: WingBend_L_jnt
+    100074: WingBend_R_jnt
+    100076: WingLow0_L_jnt
+    100078: WingLow0_R_jnt
+    100080: WingLow2_L_jnt
+    100082: WingLow2_R_jnt
+    100084: WingLow3_L_jnt1
+    100086: WingLow3_R_jnt1
+    100088: WingLowAlign_L_jnt
+    100090: WingLowAlign_R_jnt
+    100092: WingSide_L_jnt
+    100094: WingSide_R_jnt
+    400000: Base_jnt
+    400002: //RootNode
+    400004: Clavicle_L_jnt
+    400006: Clavicle_R_jnt
+    400008: Ear_L_jnt
+    400010: Ear_R_jnt
+    400012: Elbow_L_jnt
+    400014: Elbow_R_jnt
+    400016: Foot_L_jnt
+    400018: Foot_R_jnt
+    400020: Hand_L_jnt
+    400022: Hand_R_jnt
+    400024: Knee_L_jnt
+    400026: Knee_R_jnt
+    400028: Leg_L_jnt
+    400030: Leg_R_jnt
+    400032: Neck_jnt
+    400034: Shoulder_L_jnt
+    400036: Shoulder_R_jnt
+    400038: Spine1_jnt
+    400040: Spine2_jnt
+    400042: Spine3_jnt
+    400044: Thumb_L_Jnt
+    400046: Thumb_R_Jnt
+    400048: ThumbKnuckle_L_jnt
+    400050: ThumbKnuckle_R_jnt
+    400052: Toe1_L_jnt
+    400054: Toe1_R_jnt
+    400056: Toe2_L_jnt
+    400058: Toe2_R_jnt
+    400060: Toe3_L_jnt
+    400062: Toe3_R_jnt
+    400064: Toe4_L_jnt
+    400066: Toe4_R_jnt
+    400068: Toe5_L_jnt
+    400070: Toe5_R_jnt
+    400072: WingBend_L_jnt
+    400074: WingBend_R_jnt
+    400076: WingLow0_L_jnt
+    400078: WingLow0_R_jnt
+    400080: WingLow2_L_jnt
+    400082: WingLow2_R_jnt
+    400084: WingLow3_L_jnt1
+    400086: WingLow3_R_jnt1
+    400088: WingLowAlign_L_jnt
+    400090: WingLowAlign_R_jnt
+    400092: WingSide_L_jnt
+    400094: WingSide_R_jnt
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
