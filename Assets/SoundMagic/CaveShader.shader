@@ -27,6 +27,9 @@
         // Local Blackness
         _LocalAlwaysLightRange ("Range which is somewhat visible always (units)", Float) = 5
         _LocalAlwaysLightColor ("Color for the somewhat visible range", Color) = (1,1,1,1)
+
+        // Not used for this shader (but will replace)
+		_LightAffectTex ("ALT shader - Light Affection Map", 2D) = "white" {}
 	}
 	SubShader {
         Lighting Off

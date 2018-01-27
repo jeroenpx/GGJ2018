@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65984761380619468}
   - component: {fileID: 23383363435459422}
   m_Layer: 0
-  m_Name: DummyCube
+  m_Name: DummyCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584538587531034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.69, y: 0, z: -13.18}
-  m_LocalScale: {x: 4.042735, y: 4.0427313, z: 4.0427313}
+  m_LocalPosition: {x: 5.2, y: -2.1062326, z: 3.69}
+  m_LocalScale: {x: 0.84951717, y: 0.84951645, z: 0.84951645}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1584538587531034}
-  m_Mesh: {fileID: 4300000, guid: 4f50c35aeb350754fbdf09d51e6b9cab, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 10045d66f1922d844a182f8f101e1dba, type: 3}
 --- !u!65 &65984761380619468
 BoxCollider:
   m_ObjectHideFlags: 1
