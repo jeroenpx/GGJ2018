@@ -3,7 +3,7 @@
 		_LightAffectTex ("Light Affection Map", 2D) = "white" {}
 	}
 	SubShader {
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="CaveMaterial" }
 		LOD 200
 		
 		CGPROGRAM
@@ -35,6 +35,14 @@
 			o.Emission = IN.vertexColor;
 		}
 		ENDCG
+	}
+	SubShader {
+		Tags { "RenderType"="Transparent" }
+		UsePass "Particles/Additive"
+	}
+	SubShader {
+		Tags { "RenderType"="Opaque" }
+		UsePass "Standard"
 	}
 	FallBack "Diffuse"
 }

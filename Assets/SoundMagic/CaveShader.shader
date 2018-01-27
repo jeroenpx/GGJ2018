@@ -33,7 +33,7 @@
 	}
 	SubShader {
         Lighting Off
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="CaveMaterial" }
 		LOD 200
 
 		CGPROGRAM
