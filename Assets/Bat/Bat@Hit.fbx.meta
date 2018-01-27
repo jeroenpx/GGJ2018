@@ -53,6 +53,29 @@ ModelImporter:
     100090: WingLowAlign_R_jnt
     100092: WingSide_L_jnt
     100094: WingSide_R_jnt
+    100096: Ear_L_END_jnt
+    100098: Ear_R_END_jnt
+    100100: Head_END_jnt
+    100102: Thumb_L_End_jnt
+    100104: Thumb_R_End_jnt
+    100106: Toe1_L_END_jnt
+    100108: Toe1_R_END_jnt
+    100110: Toe2_L_END_jnt
+    100112: Toe2_R_END_jnt
+    100114: Toe3_L_END_jnt
+    100116: Toe3_R_END_jnt
+    100118: Toe4_L_END_jnt
+    100120: Toe4_R_END_jnt
+    100122: Toe5_L_END_jnt
+    100124: Toe5_R_END_jnt
+    100126: WingLow0_L_END_jnt
+    100128: WingLow0_R_END_jnt
+    100130: WingLow2_L_END_jnt
+    100132: WingLow2_R_END_jnt
+    100134: WingLow3_L_END_jnt
+    100136: WingLow3_R_END_jnt
+    100138: WingSide_L_END_jnt
+    100140: WingSide_R_END_jnt
     400000: Base_jnt
     400002: //RootNode
     400004: Clavicle_L_jnt
@@ -101,6 +124,29 @@ ModelImporter:
     400090: WingLowAlign_R_jnt
     400092: WingSide_L_jnt
     400094: WingSide_R_jnt
+    400096: Ear_L_END_jnt
+    400098: Ear_R_END_jnt
+    400100: Head_END_jnt
+    400102: Thumb_L_End_jnt
+    400104: Thumb_R_End_jnt
+    400106: Toe1_L_END_jnt
+    400108: Toe1_R_END_jnt
+    400110: Toe2_L_END_jnt
+    400112: Toe2_R_END_jnt
+    400114: Toe3_L_END_jnt
+    400116: Toe3_R_END_jnt
+    400118: Toe4_L_END_jnt
+    400120: Toe4_R_END_jnt
+    400122: Toe5_L_END_jnt
+    400124: Toe5_R_END_jnt
+    400126: WingLow0_L_END_jnt
+    400128: WingLow0_R_END_jnt
+    400130: WingLow2_L_END_jnt
+    400132: WingLow2_R_END_jnt
+    400134: WingLow3_L_END_jnt
+    400136: WingLow3_R_END_jnt
+    400138: WingSide_L_END_jnt
+    400140: WingSide_R_END_jnt
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
