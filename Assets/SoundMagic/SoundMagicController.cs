@@ -9,7 +9,7 @@ public class SoundMagicController : MonoBehaviour {
 	private float startTime;
 	private float previousStartTime;
 
-	private float keepActionTime = 2;
+	private float preventActionTime = 2;
 
 	private GameObject[] crystals;
 	private bool[] activatedByWave;
@@ -19,16 +19,16 @@ public class SoundMagicController : MonoBehaviour {
 		previousStartTime = -1000;
 	}
 
+	public void DoMagic() {
+		previousStartTime = startTime;
+		startTime = Time.time;
+
+		// Find all crystals
+		crystals = GameObject.FindGameObjectsWithTag("Crystal");
+		activatedByWave = new bool[crystals.Length];
+	}
+
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			previousStartTime = startTime;
-			startTime = Time.time;
-
-			// Find all crystals
-			crystals = GameObject.FindGameObjectsWithTag("Crystal");
-			activatedByWave = new bool[crystals.Length];
-		}
-
 		caveMaterial.SetFloat ("_TimeManual", Time.time);
 		caveMaterial.SetFloat ("_TimeStart", startTime);
 		caveMaterial.SetFloat ("_PreviousTimeStart", previousStartTime);

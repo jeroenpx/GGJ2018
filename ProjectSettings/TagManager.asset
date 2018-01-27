@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FGLight
   - Crystal
+  - ScoreMgr
   layers:
   - Default
   - TransparentFX
