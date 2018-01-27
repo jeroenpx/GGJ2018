@@ -1601,7 +1601,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1203264629545890}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1609,7 +1609,7 @@ Transform:
   - {fileID: 4496073576258746}
   m_Father: {fileID: 4546357502495324}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!4 &4700335333405572
 Transform:
   m_ObjectHideFlags: 1
@@ -1984,7 +1984,7 @@ Animator:
   m_GameObject: {fileID: 1203264629545890}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 70efdd04d690279478c2d0ca467101a5, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43eef75a5d602fb45955afe9e41f64fe, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2342,12 +2342,13 @@ MonoBehaviour:
   moveSmoothTime: 0.3
   movePotential: 0.5
   bat: {fileID: 4546357502495324}
+  batanim: {fileID: 95916280281233346}
   tiltAmount: 15
   secondsReturnOnDead: 1
   cam: {fileID: 4300675776606526}
-  deathPart1WaitDuration: 1
-  deathPart2TweenDuration: 1
-  deathPart2WaitDuration: 1
+  deathPart1WaitDuration: 0.5
+  deathPart2TweenDuration: 0.5
+  deathPart2WaitDuration: 0.3
   deathShakeAmount: 1
   deathShakeDuration: 0.2
 --- !u!114 &114742737105352016

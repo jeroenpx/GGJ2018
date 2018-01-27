@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
 
 	// The bat (to rotate)
 	public Transform bat;
+	public Animator batanim;
 	public float tiltAmount = 45;
 	private Vector3 moveDirectionPrev;
 
@@ -56,6 +57,7 @@ public class PlayerControl : MonoBehaviour {
 
 	IEnumerator ReturnAfterDeathCo() {
 		death = true;
+		batanim.SetBool ("Death", true);
 		// Make the camera shake
 		Camera.main.GetComponent<CameraShake> ().ShakeCamera (deathShakeAmount, deathShakeDuration);
 
@@ -97,6 +99,7 @@ public class PlayerControl : MonoBehaviour {
 		moveDirection = returnMoveTo;
 		moveDirectionPrev = moveDirection;
 		ResetDeathPoints();
+		batanim.SetBool ("Death", false);
 		death = false;
 	}
 
