@@ -44,8 +44,7 @@ public class CrystalControl : MonoBehaviour {
 		affectedlight.intensity = maxIntensity*percentActivation;
 	}
 
-	[ContextMenu("Activate")]
-	public void Activate() {
-		activationStart = Time.time;
+	public void Activate(float percent) {
+		activationStart = Time.time-(1-percent)*activationDuration;
 	}
 }

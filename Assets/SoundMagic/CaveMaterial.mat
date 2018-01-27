@@ -68,7 +68,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LocalAlwaysLightRange: 5
+    - _LocalAlwaysLightRange: 4
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -78,19 +78,19 @@ Material:
     - _SineDistance: 2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 5
+    - _Speed: 9
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 0.6845366
+    - _TimeManual: 13.138262
     - _TimeSpeed: 10
     - _TimeStart: -1000
     - _UVSec: 0
-    - _WaveEffectTime: 1
+    - _WaveEffectTime: 0.5
     - _ZWrite: 1
     m_Colors:
     - _Back: {r: 0.1397059, g: 0.13256474, b: 0.13046065, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Front: {r: 0.21604674, g: 0.25583467, b: 0.27205884, a: 1}
-    - _LocalAlwaysLightColor: {r: 0.20588237, g: 0.20588237, b: 0.20588237, a: 1}
-    - _SourcePoint: {r: 0.8, g: 0, b: -3.05, a: 0}
+    - _LocalAlwaysLightColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
+    - _SourcePoint: {r: 4.372116, g: 0, b: 130.54922, a: 0}

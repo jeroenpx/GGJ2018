@@ -36,6 +36,7 @@ public class SoundMagicController : MonoBehaviour {
 		// How much did the current wave travel?
 		float waveTravelDist = caveMaterial.GetFloat("_Speed")*(Time.time-startTime);
 		Vector4 sourcePoint = caveMaterial.GetVector ("_SourcePoint");
+		float fadeOutDistance = caveMaterial.GetFloat ("_FadeOutDistance");
 
 		// What Crystals are at those locations?
 		if(crystals!=null) {
@@ -45,7 +46,8 @@ public class SoundMagicController : MonoBehaviour {
 					float distanceFromSource = Vector3.Distance (crystals [i].transform.position, sourcePoint);
 					if (distanceFromSource < waveTravelDist) {
 						activatedByWave [i] = true;
-						crystals [i].GetComponent<CrystalControl> ().Activate ();
+						float activationPercent = Mathf.Clamp01 (1 - distanceFromSource / fadeOutDistance);
+						crystals [i].GetComponent<CrystalControl> ().Activate (activationPercent);
 					}
 				}
 			}
