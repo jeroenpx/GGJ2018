@@ -10,6 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: straight_col
+    4300002: straight_low
     9500000: //RootNode
   externalObjects:
   - first:
@@ -17,6 +18,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CAVESTRAIGHT_col_default
     second: {fileID: 2100000, guid: cb2bf572108c530499acb713c414445e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CAVESTRAIGHT_low_default
+    second: {fileID: 2100000, guid: ffda338454ba0024fbedabe1201f2ef6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
