@@ -369,12 +369,12 @@ Prefab:
     - target: {fileID: 224998192432281790, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 408.28958
+      value: 529.28955
       objectReference: {fileID: 0}
     - target: {fileID: 224998192432281790, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 165.59564
+      value: 323.59564
       objectReference: {fileID: 0}
     - target: {fileID: 224795709480672588, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
@@ -1106,6 +1106,7 @@ MonoBehaviour:
   - Part_01
   - Part_02
   - Part_bend_template
+  - Part_Straight
   loading: 0
 --- !u!4 &1883061373
 Transform:

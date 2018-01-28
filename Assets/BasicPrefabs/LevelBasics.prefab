@@ -2664,8 +2664,10 @@ MonoBehaviour:
   endPoint: {fileID: 0}
   markerPrefab: {fileID: 1302478546871764, guid: 086725a12833d8c4a9ffa648842e2829,
     type: 2}
+  lifeText: {fileID: 114020660517442688}
   scoreDistanceFactor: 0.4
   startZ: 0
+  life: 10
   energy: 5
   timeTillEnergyGone: 1
 --- !u!114 &114330266005176284
@@ -2878,17 +2880,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fc19d5050f02845ba0bfc58a41842d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.2
-  moveSmoothTime: 0.3
+  velocity: 0.17
+  moveSmoothTime: 0.4
   movePotential: 1
   bat: {fileID: 4546357502495324}
   batanim: {fileID: 95801210974724538}
   tiltAmount: 15
-  secondsReturnOnDead: 1
+  secondsReturnOnDead: 2
   cam: {fileID: 4300675776606526}
   deathPart1WaitDuration: 0.5
   deathPart2TweenDuration: 0.5
-  deathPart2WaitDuration: 0
+  deathPart2WaitDuration: 0.5
   deathShakeAmount: 1
   deathShakeDuration: 0.2
 --- !u!114 &114742737105352016

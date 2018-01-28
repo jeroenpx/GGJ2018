@@ -52,6 +52,8 @@ public class PlayerControl : MonoBehaviour {
 	public void ReturnAfterDeath() {
 		if (death)
 			return;
+
+		GetComponent <PlayerScoreKeeper> ().Die ();
 		StartCoroutine (ReturnAfterDeathCo ());
 	}
 

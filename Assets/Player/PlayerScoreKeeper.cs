@@ -10,10 +10,13 @@ public class PlayerScoreKeeper : MonoBehaviour {
 	public Canvas canvas;
 	public RectTransform endPoint;
 	public GameObject markerPrefab;
+	public Text lifeText;
 
 	public float scoreDistanceFactor;
 
 	public float startZ;
+
+	public float life = 10;
 
 	// Pixels of one unit in progress bar
 	private float W = 38;
@@ -48,6 +51,22 @@ public class PlayerScoreKeeper : MonoBehaviour {
 		energy += 1;
 	}
 
+	public IEnumerator DieRoutine() {
+		yield return new WaitForSeconds(0.15f);
+		Time.timeScale = 1f;
+		UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+	}
+
+	public void Die() {
+		if (life == 0) {
+			StartCoroutine (DieRoutine ());
+			Time.timeScale = 0.1f;
+		} else {
+			life--;
+		}
+
+	}
+
 	public bool ShrinkEnergy() {
 		if (energy > 0) {
 			reducing += 1;
@@ -72,5 +91,9 @@ public class PlayerScoreKeeper : MonoBehaviour {
 
 		// Update energy
 		energyImage.sizeDelta = new Vector2((energy+reducing) * W, energyImage.sizeDelta.y);
+
+
+		lifeText.text = "Lives: "+life;
+
 	}
 }

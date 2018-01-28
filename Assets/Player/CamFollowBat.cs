@@ -24,5 +24,6 @@ public class CamFollowBat : MonoBehaviour {
 		Vector3 target = player.position+(transform.position-player.position).normalized*keepDistance;
 		transform.position = target;
 		//transform.position = Vector3.SmoothDamp(transform.position, target, ref currentVelocity, smoothTime);
+		transform.LookAt(player.position);
 	}
 }

@@ -21,7 +21,15 @@ public class CrystalControl : MonoBehaviour {
 		affectedMesh = affectedMeshObject.GetComponent<MeshFilter> ().mesh;
 
 		maxIntensity = affectedlight.intensity;
+		int vCount = affectedMesh.vertexCount;
 		Color[] colors = affectedMesh.colors;
+		if (vCount != colors.Length) {
+			colors = new Color[vCount];
+			for (int i = 0; i < vCount; i++) {
+				colors [i] = Color.white;
+			}
+		}
+		affectedMesh.colors = colors;
 		originalColors = new Color[colors.Length];
 		for (int i = 0; i < colors.Length; i++) {
 			originalColors [i] = colors [i];
