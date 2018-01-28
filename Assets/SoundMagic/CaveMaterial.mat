@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9cae14ee4ca56464ba8cb2325e3298c4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,7 +43,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6dd48331874c0a748b7140866fada624, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -74,7 +74,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PreviousTimeEnd: 0
-    - _PreviousTimeStart: 22.625029
+    - _PreviousTimeStart: 2.4897797
     - _SineDistance: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -82,9 +82,9 @@ Material:
     - _SpeedInterference: 2
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 28.275877
+    - _TimeManual: 16.177307
     - _TimeSpeed: 10
-    - _TimeStart: 24.08779
+    - _TimeStart: 7.250456
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
@@ -92,6 +92,7 @@ Material:
     - _Back: {r: 0.08099047, g: 0.08931659, b: 0.102941155, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmitMult: {r: 1, g: 1, b: 1, a: 1}
     - _Front: {r: 0.15700692, g: 0.21784098, b: 0.24264705, a: 1}
     - _LocalAlwaysLightColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
-    - _SourcePoint: {r: 0.75492924, g: 0, b: 255.28874, a: 0}
+    - _SourcePoint: {r: 2.7681494, g: -0.30586505, b: 108.01963, a: 0}

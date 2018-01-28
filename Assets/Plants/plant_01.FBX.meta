@@ -16,7 +16,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: plants_lo_default
-    second: {fileID: 2100000, guid: 118133a310a155c42a6a863e4f4a6770, type: 2}
+    second: {fileID: 2100000, guid: 565d1609da4bd3446948dd2e750fcc83, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +46,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.15
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
