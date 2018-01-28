@@ -76,8 +76,8 @@ Material:
     - _Speed: 18
     - _SpeedInterference: 2
     - _SrcBlend: 1
-    - _TimeManual: 30.751072
-    - _TimeStart: 0.9754231
+    - _TimeManual: 6.2329183
+    - _TimeStart: 0.98539215
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
@@ -85,7 +85,7 @@ Material:
     - _Back: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 0.588, g: 0.588, b: 0.588, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _EmitMult: {r: 1, g: 1, b: 1, a: 1}
+    - _EmitMult: {r: 0, g: 0, b: 0, a: 1}
     - _Front: {r: 1, g: 1, b: 1, a: 1}
     - _LocalAlwaysLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SourcePoint: {r: 0, g: 0, b: 7.8643274, a: 0}
+    - _SourcePoint: {r: -3.1379833, g: 0, b: 27.03982, a: 0}

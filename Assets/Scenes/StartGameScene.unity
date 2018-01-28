@@ -374,7 +374,7 @@ Prefab:
     - target: {fileID: 224998192432281790, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 209.09564
+      value: 323.59564
       objectReference: {fileID: 0}
     - target: {fileID: 224795709480672588, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
@@ -385,6 +385,26 @@ Prefab:
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 338.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: secondsReturnOnDead
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: deathPart2WaitDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: moveSmoothTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: velocity
+      value: 0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e4182a82665b3444822aa0219fdee07, type: 2}
