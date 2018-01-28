@@ -17,6 +17,12 @@ public class ImportScenes : MonoBehaviour
 
 	public bool loading = false;
 
+	private List<GameObject> scenes;
+
+	void Awake() {
+		scenes = new List<GameObject> ();
+	}
+
 	void AddPiece() {
 		if (!loading) {
 			loading = true;
@@ -38,6 +44,12 @@ public class ImportScenes : MonoBehaviour
 			Vector3 shift = lastEndpoint.position - nextStartPoint.position;
 			level.transform.Translate (shift);
 			lastEndpoint = exit.transform;
+
+			scenes.Add (level);
+			if(scenes.Count>4) {
+				GameObject.Destroy (scenes [0]);
+				scenes.RemoveAt(0);
+			}
 			loading = false;
 		}
 	}
