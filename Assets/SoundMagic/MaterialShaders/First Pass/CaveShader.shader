@@ -126,6 +126,7 @@
 		UNITY_INSTANCING_CBUFFER_END
 
 		void surf (Input IN, inout SurfaceOutput o) {
+
 			// 2*PI = 6.28
 
 			// Distance from source

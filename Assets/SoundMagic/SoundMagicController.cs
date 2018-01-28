@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundMagicController : MonoBehaviour {
 
-	public Material caveMaterial;
+	public MagicMaterialCollection caveMat;
 
 	private float startTime;
 	private float previousStartTime;
@@ -34,14 +34,14 @@ public class SoundMagicController : MonoBehaviour {
 	}
 
 	void Update() {
-		caveMaterial.SetFloat ("_TimeManual", Time.time);
-		caveMaterial.SetFloat ("_TimeStart", startTime);
-		caveMaterial.SetFloat ("_PreviousTimeStart", previousStartTime);
+		caveMat.SetFloat ("_TimeManual", Time.time);
+		caveMat.SetFloat ("_TimeStart", startTime);
+		caveMat.SetFloat ("_PreviousTimeStart", previousStartTime);
 
 		// How much did the current wave travel?
-		float waveTravelDist = caveMaterial.GetFloat("_Speed")*(Time.time-startTime);
-		Vector4 sourcePoint = caveMaterial.GetVector ("_SourcePoint");
-		float fadeOutDistance = caveMaterial.GetFloat ("_FadeOutDistance");
+		float waveTravelDist = caveMat.GetFloat("_Speed")*(Time.time-startTime);
+		Vector4 sourcePoint = caveMat.GetVector ("_SourcePoint");
+		float fadeOutDistance = caveMat.GetFloat ("_FadeOutDistance");
 
 		// What Crystals are at those locations?
 		if(crystals!=null) {
@@ -62,9 +62,9 @@ public class SoundMagicController : MonoBehaviour {
 	[ContextMenu("Set Cave Dark")]
 	void EditorDebugSetLightDark() {
 		// Basic shader light
-		caveMaterial.SetFloat ("_TimeManual", 100);
-		caveMaterial.SetFloat ("_TimeStart", 0);
-		caveMaterial.SetFloat ("_PreviousTimeStart", 0);
+		caveMat.SetFloat ("_TimeManual", 100);
+		caveMat.SetFloat ("_TimeStart", 0);
+		caveMat.SetFloat ("_PreviousTimeStart", 0);
 
 		// Disable Crystals
 	}
@@ -72,9 +72,9 @@ public class SoundMagicController : MonoBehaviour {
 	[ContextMenu("Set Cave Full Brightness")]
 	void EditorDebugSetLightBright() {
 		// Basic shader light
-		caveMaterial.SetFloat ("_TimeManual", 2.5f);
-		caveMaterial.SetFloat ("_TimeStart", 0);
-		caveMaterial.SetFloat ("_PreviousTimeStart", -.5f);
+		caveMat.SetFloat ("_TimeManual", 2.5f);
+		caveMat.SetFloat ("_TimeStart", 0);
+		caveMat.SetFloat ("_PreviousTimeStart", -.5f);
 
 		// Enable Crystals
 	}
@@ -82,9 +82,9 @@ public class SoundMagicController : MonoBehaviour {
 	[ContextMenu("Set Cave Crystal Only Brightness")]
 	void EditorDebugSetLightLeftOverBrightNess() {
 		// Basic shader light
-		caveMaterial.SetFloat ("_TimeManual", 100);
-		caveMaterial.SetFloat ("_TimeStart", 0);
-		caveMaterial.SetFloat ("_PreviousTimeStart", 0);
+		caveMat.SetFloat ("_TimeManual", 100);
+		caveMat.SetFloat ("_TimeStart", 0);
+		caveMat.SetFloat ("_PreviousTimeStart", 0);
 
 		// Enable Crystals
 

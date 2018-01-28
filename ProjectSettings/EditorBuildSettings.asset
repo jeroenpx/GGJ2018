@@ -8,3 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cedric_TestScene.unity
     guid: 6d094277842fe43478c4a2e0fa4d1f2a
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 5d8fbfeb3c37f414ab4b35157b19d1d9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d8f03f97a541c43468c99c217fe0e1a7

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114274988273688192}
   m_Layer: 0
   m_Name: Plant_01
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 565d1609da4bd3446948dd2e750fcc83, type: 2}
+  - {fileID: 2100000, guid: 118133a310a155c42a6a863e4f4a6770, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

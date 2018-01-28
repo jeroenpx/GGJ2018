@@ -45,6 +45,7 @@ public class CrystalControl : MonoBehaviour {
 	}
 
 	public void Activate(float percent) {
+		Debug.Log ("Activated!!!");
 		activationStart = Time.time-(1-percent)*activationDuration;
 	}
 }

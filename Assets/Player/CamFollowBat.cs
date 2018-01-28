@@ -10,7 +10,7 @@ public class CamFollowBat : MonoBehaviour {
 
 	public float emitFront = 4;
 
-	public Material caveMaterial;
+	public MagicMaterialCollection caveMat;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class CamFollowBat : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		caveMaterial.SetVector ("_SourcePoint", player.position+new Vector3(0, 0, emitFront));
+		caveMat.SetVector ("_SourcePoint", player.position+new Vector3(0, 0, emitFront));
 
 		Vector3 target = player.position+(transform.position-player.position).normalized*keepDistance;
 		transform.position = target;

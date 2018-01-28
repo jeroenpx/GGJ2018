@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114868811367878470}
   m_Layer: 0
   m_Name: Plant_02
-  m_TagString: Untagged
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

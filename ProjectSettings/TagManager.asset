@@ -9,6 +9,9 @@ TagManager:
   - ScoreMgr
   - CaveMaterial
   - Bat
+  - Level
+  - Enter
+  - Exit
   layers:
   - Default
   - TransparentFX

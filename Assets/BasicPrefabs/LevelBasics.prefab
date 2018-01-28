@@ -2619,8 +2619,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allAffectedMaterials:
-  - {fileID: 2100000, guid: 118133a310a155c42a6a863e4f4a6770, type: 2}
+  - {fileID: 2100000, guid: 481040de3271edc4d8c2b71688e1f46b, type: 2}
   - {fileID: 2100000, guid: 1cac1a789358ee144a6f7b9484c462fc, type: 2}
+  - {fileID: 2100000, guid: 118133a310a155c42a6a863e4f4a6770, type: 2}
   primaryMaterial: {fileID: 2100000, guid: de98eaefe4abe734c8c57bbd14a59a83, type: 2}
 --- !u!114 &114277011555123840
 MonoBehaviour:
@@ -2912,7 +2913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d26156e252469d4c9e8a059a1f742ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caveMaterial: {fileID: 2100000, guid: de98eaefe4abe734c8c57bbd14a59a83, type: 2}
+  caveMat: {fileID: 114236947742901296}
   burstAudioEffect: {fileID: 82241159230965180}
 --- !u!114 &114776308901361394
 MonoBehaviour:
@@ -2962,7 +2963,7 @@ MonoBehaviour:
   player: {fileID: 4464316664428656}
   keepDistance: 2.5
   emitFront: 6
-  caveMaterial: {fileID: 2100000, guid: de98eaefe4abe734c8c57bbd14a59a83, type: 2}
+  caveMat: {fileID: 114236947742901296}
 --- !u!114 &114820956438540902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3031,8 +3032,8 @@ MonoBehaviour:
   simpleLightShader: {fileID: 4800000, guid: eda9fecb30d63134aa8a0c13634bec14, type: 3}
   internalCam: {fileID: 20437525952143434}
   combinationMaterial: {fileID: 2100000, guid: 934216c79af15854baca9824f4d42dfc, type: 2}
-  enableWaves: 0
-  enableEmit: 1
+  enableWaves: 1
+  enableEmit: 0
 --- !u!114 &114972071644633216
 MonoBehaviour:
   m_ObjectHideFlags: 1

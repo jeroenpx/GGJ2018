@@ -22,8 +22,25 @@ public class MagicMaterialCollection : MonoBehaviour {
 		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public void SetFloat(string name, float value) {
+		primaryMaterial.SetFloat (name, value);
+		foreach (Material mat in allAffectedMaterials) {
+			mat.SetFloat (name, value);
+		}
+	}
+
+	public float GetFloat(string name) {
+		return primaryMaterial.GetFloat (name);
+	}
+
+	public void SetVector(string name, Vector3 value) {
+		primaryMaterial.SetVector (name, value);
+		foreach (Material mat in allAffectedMaterials) {
+			mat.SetVector (name, value);
+		}
+	}
+
+	public Vector3 GetVector(string name) {
+		return primaryMaterial.GetVector (name);
 	}
 }
