@@ -496,6 +496,11 @@ Prefab:
       propertyPath: m_Name
       value: Cave_Bend
       objectReference: {fileID: 0}
+    - target: {fileID: 23976906087656822, guid: 02b638530f83deb438294fce5a9301de,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bdb29eabf2f549748bc0796e8a4afa11, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02b638530f83deb438294fce5a9301de, type: 2}
   m_IsPrefabParent: 0
