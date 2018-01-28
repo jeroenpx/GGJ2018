@@ -502,7 +502,8 @@ MonoBehaviour:
   lookAhead: 80
   availablePieces:
   - Part_01
-  - Part_01
+  - Part_02
+  - Part_bend_template
   loading: 0
 --- !u!4 &1883061373
 Transform:
