@@ -46,6 +46,9 @@ public class SoundMagicController : MonoBehaviour {
 		// What Crystals are at those locations?
 		if(crystals!=null) {
 			for (int i = 0; i < crystals.Length; i++) {
+				if (crystals [i] == null) {
+					continue;
+				}
 				if (!activatedByWave [i]) {
 					// Check if the wave passed by this crystal...
 					float distanceFromSource = Vector3.Distance (crystals [i].transform.position, sourcePoint);
