@@ -7,6 +7,7 @@ public class ImportScenes : MonoBehaviour
 {
 
     public Transform lastEndpoint;
+	private float lastEndpointY;
 
 	public Transform player;
 
@@ -16,24 +17,20 @@ public class ImportScenes : MonoBehaviour
 
 	public bool loading = false;
 
-	void Awake() {
-		SceneManager.sceneLoaded += OnSceneLoaded;
-	}
-
 	void AddPiece() {
 		if (!loading) {
 			loading = true;
-			Debug.Log ("Loading level!!!");
 			int piece = Random.Range (0, availablePieces.Count - 1);
 			SceneManager.LoadScene (availablePieces [piece], LoadSceneMode.Additive);
 		}
 	}
 
-	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-		if (mode == LoadSceneMode.Additive) {
+	void CheckSceneLoaded() {
+		GameObject level = GameObject.FindGameObjectWithTag ("Level");
+		if (level != null) {
 			GameObject enter = GameObject.FindGameObjectWithTag ("Enter");
 			GameObject exit = GameObject.FindGameObjectWithTag ("Exit");
-			GameObject level = GameObject.FindGameObjectWithTag ("Level");
+
 			enter.tag = "Processed";
 			exit.tag = "Processed";
 			level.tag = "Processed";
@@ -45,7 +42,8 @@ public class ImportScenes : MonoBehaviour
 		}
 	}
 
-    void Update () {
+	void Update () {
+		CheckSceneLoaded ();
 		if (player.position.z + lookAhead > lastEndpoint.position.z) {
 			AddPiece ();
 		}

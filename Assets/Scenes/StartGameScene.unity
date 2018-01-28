@@ -218,12 +218,12 @@ Prefab:
     - target: {fileID: 224998192432281790, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 530.78955
+      value: 529.28955
       objectReference: {fileID: 0}
     - target: {fileID: 224998192432281790, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 295.09564
+      value: 202.59564
       objectReference: {fileID: 0}
     - target: {fileID: 224632625727584806, guid: 8e4182a82665b3444822aa0219fdee07,
         type: 2}
@@ -536,7 +536,8 @@ MonoBehaviour:
   player: {fileID: 438416771}
   lookAhead: 80
   availablePieces:
-  - Part_Template
+  - Part_01
+  - Part_01
   loading: 0
 --- !u!4 &1883061373
 Transform:
