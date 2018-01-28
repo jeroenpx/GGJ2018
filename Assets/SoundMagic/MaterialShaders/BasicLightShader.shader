@@ -37,8 +37,9 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
-			fixed4 c = fixed4(1, 1, 1, 1);
+
 			fixed4 albedo = tex2D (_MainTex, IN.uv_MainTex);
+			fixed4 c = albedo*3.5;//fixed4(1, 1, 1, 1);
 			o.Albedo = c.rgb;
 			o.Alpha = c.a;
 			o.Emission = IN.vertexColor*_EmitMult*albedo.a;
