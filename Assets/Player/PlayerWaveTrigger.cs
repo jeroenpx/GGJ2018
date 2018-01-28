@@ -9,7 +9,8 @@ public class PlayerWaveTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		// Input.GetKeyDown (KeyCode.Space)
+		if (Input.GetButtonDown("Jump")) {
 			if(scoreHandler.ShrinkEnergy()) {
 				magicController.DoMagic ();
 			}
