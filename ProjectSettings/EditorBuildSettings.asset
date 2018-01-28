@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Cedric_TestScene.unity
     guid: 6d094277842fe43478c4a2e0fa4d1f2a
   - enabled: 1
-    path: Assets/Scenes/Level.unity
-    guid: 5d8fbfeb3c37f414ab4b35157b19d1d9
+    path: Assets/Scenes/StartGameScene.unity
+    guid: 4e56e91e9b0de174db9db2956b724edc
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: d8f03f97a541c43468c99c217fe0e1a7
   - enabled: 1
-    path: Assets/Scenes/Part_Template.unity
-    guid: 279b81cf77d3c5945891f4ff14b4d83e
-  - enabled: 1
     path: Assets/Scenes/Part_01.unity
     guid: ade939eaa1dfae541a602029f14c9929
+  - enabled: 1
+    path: Assets/Scenes/Part_02.unity
+    guid: 7bee77319ce3d7543a76b34be0474638
+  - enabled: 1
+    path: Assets/Scenes/Part_bend_template.unity
+    guid: 20da25eac89f5684ea5034be873eab86

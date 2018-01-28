@@ -18,7 +18,19 @@ public class MagicMaterialCollection : MonoBehaviour {
 	[ContextMenu("Do Copy")]
 	void Copy () {
 		foreach (Material mat in allAffectedMaterials) {
+			Texture mainTex = mat.GetTexture ("_MainTex");
+			Texture normTex = mat.GetTexture ("_BumpMap");
+			float gloss = mat.GetFloat("_Glossiness");
+			float metalic = mat.GetFloat("_Metallic");
+			float emit = mat.GetFloat("_EmitMult");
 			mat.CopyPropertiesFromMaterial (primaryMaterial);
+			mat.SetTexture ("_MainTex", mainTex);
+			mat.SetTexture ("_BumpMap", normTex);
+			mat.SetFloat ("_Glossiness", gloss);
+			mat.SetFloat ("_Metallic", metalic);
+			mat.SetFloat("_EmitMult", emit);
+
+
 		}
 	}
 	
