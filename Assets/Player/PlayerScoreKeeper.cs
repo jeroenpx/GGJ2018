@@ -47,8 +47,10 @@ public class PlayerScoreKeeper : MonoBehaviour {
 	IEnumerator WillAddEnergy() {
 		yield return new WaitForSeconds (.6f);
 
-		reducing -= 1;
-		energy += 1;
+		if (energy < 5) {
+			reducing -= 1;
+			energy += 1;
+		}
 	}
 
 	public IEnumerator DieRoutine() {
@@ -58,7 +60,7 @@ public class PlayerScoreKeeper : MonoBehaviour {
 	}
 
 	public void Die() {
-		if (life == 0) {
+		if (life == 1) {
 			StartCoroutine (DieRoutine ());
 			Time.timeScale = 0.1f;
 		} else {
