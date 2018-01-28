@@ -17,7 +17,7 @@ public class FireFlyScript : MonoBehaviour {
 
 	private Vector3 lastFramePos;
 
-	void Awake() {
+	void Start() {
 		startPos = transform.position;
 		nextPos = startPos;
 	}

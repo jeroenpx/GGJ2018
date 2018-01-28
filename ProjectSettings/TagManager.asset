@@ -12,6 +12,7 @@ TagManager:
   - Level
   - Enter
   - Exit
+  - Processed
   layers:
   - Default
   - TransparentFX
