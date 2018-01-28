@@ -74,7 +74,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PreviousTimeEnd: 0
-    - _PreviousTimeStart: -1000
+    - _PreviousTimeStart: 22.625029
     - _SineDistance: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -82,9 +82,9 @@ Material:
     - _SpeedInterference: 2
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 32.889797
+    - _TimeManual: 28.275877
     - _TimeSpeed: 10
-    - _TimeStart: -1000
+    - _TimeStart: 24.08779
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
@@ -94,4 +94,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Front: {r: 0.15700692, g: 0.21784098, b: 0.24264705, a: 1}
     - _LocalAlwaysLightColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
-    - _SourcePoint: {r: 0.46189174, g: -0.3556655, b: 297.85876, a: 0}
+    - _SourcePoint: {r: 0.75492924, g: 0, b: 255.28874, a: 0}

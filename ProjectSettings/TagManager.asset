@@ -8,6 +8,7 @@ TagManager:
   - Crystal
   - ScoreMgr
   - CaveMaterial
+  - Bat
   layers:
   - Default
   - TransparentFX

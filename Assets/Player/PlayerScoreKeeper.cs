@@ -7,6 +7,9 @@ public class PlayerScoreKeeper : MonoBehaviour {
 
 	public Text scoreText;
 	public RectTransform energyImage;
+	public Canvas canvas;
+	public RectTransform endPoint;
+	public GameObject markerPrefab;
 
 	public float scoreDistanceFactor;
 
@@ -23,6 +26,27 @@ public class PlayerScoreKeeper : MonoBehaviour {
 	void Start () {
 		startZ = transform.position.z;
 	}
+	public void IncreaseEnergy(Vector3 worldpos) {
+		Vector3 posOnScreen = Camera.main.WorldToViewportPoint(worldpos)- new Vector3(.5f, .5f, 0);
+
+		GameObject newMarker = GameObject.Instantiate (markerPrefab);
+		newMarker.transform.parent = canvas.transform;
+		FireFlyMarker marker = newMarker.GetComponent<FireFlyMarker> ();
+		float halfCanvasH = canvas.pixelRect.height / canvas.scaleFactor / 2;
+		float halfCanvasW = canvas.pixelRect.width / canvas.scaleFactor / 2;
+
+		marker.fromPos = new Vector2(posOnScreen.x*Screen.width/canvas.scaleFactor, posOnScreen.y*Screen.height/canvas.scaleFactor);
+		marker.toPos = new Vector2((energy-2)*W, (-halfCanvasH) + 30);
+
+		StartCoroutine (WillAddEnergy ());
+	}
+
+	IEnumerator WillAddEnergy() {
+		yield return new WaitForSeconds (.6f);
+
+		reducing -= 1;
+		energy += 1;
+	}
 
 	public bool ShrinkEnergy() {
 		if (energy > 0) {
@@ -35,11 +59,16 @@ public class PlayerScoreKeeper : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
 		// Update score
 		int score = Mathf.FloorToInt((transform.position.z-startZ)*scoreDistanceFactor);
 		scoreText.text = ""+score;
 
-		reducing = Mathf.Max (0, reducing - Time.deltaTime / timeTillEnergyGone);
+		if (reducing > 0) {
+			reducing = Mathf.Max (0, reducing - Time.deltaTime / timeTillEnergyGone);
+		} else {
+			reducing = Mathf.Min (0, reducing + Time.deltaTime / timeTillEnergyGone);
+		}
 
 		// Update energy
 		energyImage.sizeDelta = new Vector2((energy+reducing) * W, energyImage.sizeDelta.y);

@@ -2,7 +2,7 @@
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "custom/Cg two-sided per-vertex lighting" {
+Shader "Custom/Cg two-sided per-vertex lighting" {
    Properties {
       _Color ("Front Material Diffuse Color", Color) = (1,1,1,1) 
       _SpecColor ("Front Material Specular Color", Color) = (1,1,1,1) 
@@ -14,7 +14,7 @@ Shader "custom/Cg two-sided per-vertex lighting" {
    }
    SubShader {
       Pass {    
-         Tags { "LightMode" = "ForwardBase" } 
+         Tags { "LightMode" = "ForwardBase" "RenderType"="CaveMaterial" } 
             // pass for ambient light and first light source 
          Cull Back // render only front faces
  

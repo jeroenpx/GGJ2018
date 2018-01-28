@@ -1,10 +1,11 @@
 ﻿Shader "Custom/BasicLightShader" {
 	Properties {
-		_LightAffectTex ("Light Affection Map", 2D) = "white" {}
 	}
+
 	SubShader {
 		Tags { "RenderType"="CaveMaterial" }
 		LOD 200
+		Cull Off
 		
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
@@ -13,10 +14,7 @@
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
-		sampler2D _LightAffectTex;
-
 		struct Input {
-			float2 uv_LightAffectTex;
 			float4 vertexColor : COLOR;
 		};
 
@@ -29,7 +27,7 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D (_LightAffectTex, IN.uv_LightAffectTex);
+			fixed4 c = fixed4(1, 1, 1, 1);
 			o.Albedo = c.rgb;
 			o.Alpha = c.a;
 			o.Emission = IN.vertexColor;
@@ -38,7 +36,7 @@
 	}
 	SubShader {
 		Tags { "RenderType"="Transparent" }
-		UsePass "Particles/Additive"
+		UsePass "custom/Unity - Particles - Alpha Blended"
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
