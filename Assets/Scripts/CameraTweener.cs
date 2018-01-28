@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraTweener : MonoBehaviour {
 
@@ -40,5 +41,29 @@ public class CameraTweener : MonoBehaviour {
     public void GoToMainMenu()
     {
         SetPosition(0);
+    }
+
+    public void GoToCave()
+    {
+        SetPosition(2);
+        StartCoroutine(LoadGame());
+    }
+
+    public void GoToCaveTutorial()
+    {
+        SetPosition(2);
+        StartCoroutine(LoadTutorial());
+    }
+
+
+    private IEnumerator LoadGame()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(1);
+    }
+    private IEnumerator LoadTutorial()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(2);
     }
 }
