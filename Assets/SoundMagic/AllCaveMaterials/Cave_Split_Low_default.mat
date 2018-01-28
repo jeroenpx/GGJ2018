@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Cave_Split_Low_default
   m_Shader: {fileID: 4800000, guid: 7dd82ae7e02204a4190837547189eb39, type: 3}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -74,7 +74,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PreviousTimeEnd: 0
-    - _PreviousTimeStart: 0.85593337
+    - _PreviousTimeStart: 3.1999414
     - _SineDistance: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -82,9 +82,9 @@ Material:
     - _SpeedInterference: 2
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 6.680443
+    - _TimeManual: 15.759942
     - _TimeSpeed: 10
-    - _TimeStart: 4.317247
+    - _TimeStart: 6.9645643
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
@@ -92,8 +92,7 @@ Material:
     - _Back: {r: 0.08099047, g: 0.08931659, b: 0.102941155, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmitMult: {r: 0, g: 0, b: 0, a: 1}
-    - _EnableSecondPass: {r: 1, g: 1, b: 1, a: 1}
+    - _EmitMult: {r: 1, g: 1, b: 1, a: 1}
     - _Front: {r: 0.15700692, g: 0.21784098, b: 0.24264705, a: 1}
     - _LocalAlwaysLightColor: {r: 0.11764705, g: 0.11764705, b: 0.11764705, a: 1}
-    - _SourcePoint: {r: -10.726548, g: 1.1800594, b: 76.950066, a: 0}
+    - _SourcePoint: {r: -16.209019, g: 2.5659003, b: 70.57471, a: 0}
