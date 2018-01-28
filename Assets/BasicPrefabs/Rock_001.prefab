@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33141837936930742}
   - component: {fileID: 23175818675886748}
   - component: {fileID: 95099969943426570}
+  - component: {fileID: 64502979672395734}
   m_Layer: 0
   m_Name: Rock_001
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142449180742506}
+  m_Mesh: {fileID: 4300000, guid: 35264930380b0264d95f4779d7fee028, type: 3}
+--- !u!64 &64502979672395734
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142449180742506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 35264930380b0264d95f4779d7fee028, type: 3}
 --- !u!95 &95099969943426570
 Animator:
