@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
 
+	public AudioSource impactSound;
+
 	void OnCollisionEnter(Collision coll) {
-		Debug.Log ("Hit something");
+		impactSound.Play ();
 		transform.parent.GetComponent<PlayerControl>().ReturnAfterDeath ();
 	}
 }
