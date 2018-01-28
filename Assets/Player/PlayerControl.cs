@@ -55,6 +55,11 @@ public class PlayerControl : MonoBehaviour {
 		StartCoroutine (ReturnAfterDeathCo ());
 	}
 
+	public void Eat() {
+		// Do animation
+		GetComponent <PlayerScoreKeeper>().IncreaseEnergy(transform.position);
+	}
+
 	IEnumerator ReturnAfterDeathCo() {
 		death = true;
 		batanim.SetBool ("Death", true);
@@ -92,7 +97,7 @@ public class PlayerControl : MonoBehaviour {
 		}
 
 		// Wait (part 3)
-		yield return new WaitForSeconds(deathPart1WaitDuration);
+		yield return new WaitForSeconds(deathPart2WaitDuration);
 
 		// Return to live
 		smoothDirectionVelocity = Vector3.zero;

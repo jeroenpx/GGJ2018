@@ -44,7 +44,7 @@ public class CombinationPostProcessing : MonoBehaviour {
 
 		// -- Prepare the internal camera --
 		internalCam.CopyFrom(cam);
-		internalCam.SetReplacementShader (simpleLightShader, "RenderType");
+		internalCam.SetReplacementShader (simpleLightShader, "");
 		// Disable FG lights
 		ToggleFGLights(false);
 		// Set the render texture
