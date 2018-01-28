@@ -386,6 +386,25 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 338.875
       objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: movePotential
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: velocity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723225493861498, guid: 8e4182a82665b3444822aa0219fdee07, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.0000057816505
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733518464631240, guid: 8e4182a82665b3444822aa0219fdee07,
+        type: 2}
+      propertyPath: moveSmoothTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e4182a82665b3444822aa0219fdee07, type: 2}
   m_IsPrefabParent: 0

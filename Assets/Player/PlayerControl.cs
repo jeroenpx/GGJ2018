@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour {
 	public float velocity = 1;
 
 	private Vector3 smoothDirectionVelocity;
-	private Vector3 moveDirection;
+	private Vector3 moveDirection = Vector3.forward;
 	public float moveSmoothTime=1;
 
 	// How much can we move left/right (1 = 45° -> tan(hoek))
@@ -146,17 +146,15 @@ public class PlayerControl : MonoBehaviour {
 			float horizSpeed = Input.GetAxis ("Horizontal");
 			float vertSpeed = Input.GetAxis ("Vertical");
 			Vector3 goalMoveDirection = new Vector3 (horizSpeed, vertSpeed, 0);
-			moveDirection = Vector3.SmoothDamp (moveDirection, goalMoveDirection, ref smoothDirectionVelocity, moveSmoothTime);
+			moveDirection = Vector3.SmoothDamp (moveDirection, Vector3.Normalize(moveDirection + movePotential* (Quaternion.LookRotation(moveDirection.normalized, Vector3.up)*goalMoveDirection)), ref smoothDirectionVelocity, moveSmoothTime);
 
 			Vector3 moveDirectionDiff = (moveDirection - moveDirectionPrev) / Time.deltaTime;
 
-			Vector3 direction = Vector3.forward + movePotential * moveDirection;
-
 			// Move
-			transform.Translate (direction * velocity);
+			transform.Translate (moveDirection * velocity);
 
 			// Rotate bat
-			bat.transform.rotation = Quaternion.AngleAxis (moveDirectionDiff.x * tiltAmount, Vector3.back) * Quaternion.LookRotation (direction, Vector3.up);
+			bat.transform.rotation = Quaternion.AngleAxis (moveDirectionDiff.x * tiltAmount, Vector3.back) * Quaternion.LookRotation (moveDirection, Vector3.up);
 		}
 	}
 }
