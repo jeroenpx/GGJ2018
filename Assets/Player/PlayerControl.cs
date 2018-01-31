@@ -10,9 +10,11 @@ public class PlayerControl : MonoBehaviour {
 	private Vector3 smoothDirectionVelocity;
 	private Vector3 moveDirection = Vector3.forward;
 	public float moveSmoothTime=1;
+	public float moveSmoothTimeCrisp = 0;
 
-	// How much can we move left/right (1 = 45° -> tan(hoek))
+	// How much can we move left/right
 	public float movePotential = 1;
+	public float movePotentialCrisp = 0;
 
 	// The bat (to rotate)
 	public Transform bat;
@@ -39,9 +41,40 @@ public class PlayerControl : MonoBehaviour {
 	public float deathShakeAmount = 2;//The amount to shake this frame.
 	public float deathShakeDuration = .4f;//The duration this frame.
 
+	public bool crispMovement = false;
+
+	public Canvas mobileMovementCanvas;
+	public RectTransform mobileRectTransform;
+	public RectTransform mobileRectTransformWave;
+	private int lastTouchId;
+	private bool wasActivateWave = false;
+
+	private bool debugEmulateTouchWithMouse = false;
+
 	void Awake() {
 		savePointDelta = secondsReturnOnDead / COUNT;
 		ResetDeathPoints ();
+		/*
+		#if !UNITY_EDITOR
+		#if UNITY_ANDROID
+		crispMovement = true;
+		#endif
+		#endif
+		*/
+
+		bool showMobileControls = false;
+
+		#if UNITY_ANDROID
+		showMobileControls = true;
+		#endif
+		#if UNITY_IOS
+		showMobileControls = true;
+		#endif
+
+		if (!showMobileControls) {
+			Destroy(mobileRectTransform.gameObject);
+			Destroy(mobileRectTransformWave.gameObject);
+		}
 	}
 
 	// Use this for initialization
@@ -125,6 +158,14 @@ public class PlayerControl : MonoBehaviour {
 		}
 		nextDeathSavePointTime = Time.time + savePointDelta;
 	}
+
+	Vector2 handleAccel (Vector2 accel) {
+		accel *= 5;// acceleration effect factor
+		if (accel.sqrMagnitude > 1) {
+			return accel.normalized;
+		}
+		return accel;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -145,13 +186,79 @@ public class PlayerControl : MonoBehaviour {
 
 			float horizSpeed = Input.GetAxis ("Horizontal");
 			float vertSpeed = Input.GetAxis ("Vertical");
+			/*#if !UNITY_EDITOR
+			#if UNITY_ANDROID
+			Vector2 accel = handleAccel(new Vector2(Input.acceleration.x, Input.acceleration.y));
+			horizSpeed = accel.x;
+			vertSpeed = accel.y;
+			#endif
+			#endif*/
+
+			if (mobileRectTransform != null) {
+
+				// 1) Find Touch inside circle
+				Touch[] touches = new Touch[Input.touchCount];
+				for (int i = 0; i < touches.Length; i++) {
+					touches [i] = Input.GetTouch (i);
+				}
+				bool emulateTouchWithMouse = Input.GetKey (KeyCode.Mouse1) && debugEmulateTouchWithMouse;
+
+				// For debugging
+				if (emulateTouchWithMouse) {
+					touches = new Touch[1];
+				}
+
+				bool activateWave = false;
+
+				for (int i = 0; i < touches.Length; i++) {
+					Touch t = touches [i];
+					Vector2 touchPos = t.position;
+					if (emulateTouchWithMouse) {
+						touchPos = Input.mousePosition;
+					}
+					Vector3 posOnScreen = Camera.main.ScreenToViewportPoint (touchPos);
+					Vector2 UIpos = new Vector2 (posOnScreen.x * Screen.width / mobileMovementCanvas.scaleFactor, posOnScreen.y * Screen.height / mobileMovementCanvas.scaleFactor);
+					//mobileRectTransform.anchoredPosition;
+					//mobileRectTransform.pivot;
+
+					Vector2 diff = ((Vector2)(mobileRectTransform.position / mobileMovementCanvas.scaleFactor) - UIpos) / 75;
+					bool active = false;
+					if (diff.sqrMagnitude < 1) {
+						// In circle
+						lastTouchId = t.fingerId;
+						active = true;
+					} else if (!emulateTouchWithMouse && t.fingerId == lastTouchId) {
+						diff = diff.normalized;
+						active = true;
+					}
+					if (active) {
+						horizSpeed = -diff.x;
+						vertSpeed = -diff.y;
+					}
+
+					Vector2 diffWithButton = ((Vector2)(mobileRectTransformWave.position / mobileMovementCanvas.scaleFactor) - UIpos) / 75;
+					if (diffWithButton.sqrMagnitude < 1) {
+						activateWave = true;
+					}
+				}
+				if (!wasActivateWave && activateWave) {
+					SendMessage ("DoWaveTrigger");
+				}
+				wasActivateWave = activateWave;
+			}
+
 			Vector3 goalMoveDirection = new Vector3 (horizSpeed, vertSpeed, 0);
-			moveDirection = Vector3.SmoothDamp (moveDirection, Vector3.Normalize(moveDirection + movePotential* (Quaternion.LookRotation(moveDirection.normalized, Vector3.up)*goalMoveDirection)), ref smoothDirectionVelocity, moveSmoothTime);
+			Vector3 goalDirectionRotated = Vector3.Normalize (moveDirection + (crispMovement?movePotentialCrisp:movePotential) * (Quaternion.LookRotation (moveDirection.normalized, Vector3.up) * goalMoveDirection));
+			if (crispMovement) {
+				moveDirection = goalDirectionRotated;
+			} else {
+				moveDirection = Vector3.SmoothDamp (moveDirection, goalDirectionRotated, ref smoothDirectionVelocity, crispMovement ? moveSmoothTimeCrisp : moveSmoothTime);
+			}
 
 			Vector3 moveDirectionDiff = (moveDirection - moveDirectionPrev) / Time.deltaTime;
 
 			// Move
-			transform.Translate (moveDirection * velocity);
+			transform.Translate (moveDirection * velocity*Time.deltaTime * 60);
 
 			// Rotate bat
 			bat.transform.rotation = Quaternion.AngleAxis (moveDirectionDiff.x * tiltAmount, Vector3.back) * Quaternion.LookRotation (moveDirection, Vector3.up);

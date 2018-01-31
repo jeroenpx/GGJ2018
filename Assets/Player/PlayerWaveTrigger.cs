@@ -6,14 +6,19 @@ public class PlayerWaveTrigger : MonoBehaviour {
 
 	public PlayerScoreKeeper scoreHandler;
 	public SoundMagicController magicController;
-	
+
+	private bool isTouching = false;
+
 	// Update is called once per frame
 	void Update () {
-		// Input.GetKeyDown (KeyCode.Space)
 		if (Input.GetButtonDown("Jump")) {
-			if(scoreHandler.ShrinkEnergy()) {
-				magicController.DoMagic ();
-			}
+			DoWaveTrigger ();
+		}
+	}
+
+	void DoWaveTrigger() {
+		if(scoreHandler.ShrinkEnergy()) {
+			magicController.DoMagic ();
 		}
 	}
 }
