@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Cave_Split_Low_default
   m_Shader: {fileID: 4800000, guid: 7dd82ae7e02204a4190837547189eb39, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 4ba48b66065a0224596b0dee5d52e99e, type: 3}
+        m_Texture: {fileID: 2800000, guid: c968a471ddb7e154e9eae447b75628e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -74,7 +74,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PreviousTimeEnd: 0
-    - _PreviousTimeStart: 147.73915
+    - _PreviousTimeStart: 162.38234
     - _SineDistance: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -82,9 +82,9 @@ Material:
     - _SpeedInterference: 2
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 161.39607
+    - _TimeManual: 170.50044
     - _TimeSpeed: 10
-    - _TimeStart: 155.75026
+    - _TimeStart: 164.423
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
@@ -95,4 +95,4 @@ Material:
     - _EmitMult: {r: 0.6627451, g: 0.6509804, b: 0.9843137, a: 1}
     - _Front: {r: 0.15700692, g: 0.21784098, b: 0.24264705, a: 1}
     - _LocalAlwaysLightColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SourcePoint: {r: -249.86012, g: -55.08383, b: 623.3254, a: 0}
+    - _SourcePoint: {r: -6.5654755, g: -144.66096, b: 893.4779, a: 0}
