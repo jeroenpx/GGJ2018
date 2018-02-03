@@ -46,7 +46,7 @@
 				fixed4 col = tex2D(_MainTex, i.uv);
 				fixed4 emitcol = tex2D(_EmitTex, i.uv);
 				// just invert the colors
-				return col+emitcol;
+				return col*emitcol;
 			}
 			ENDCG
 		}

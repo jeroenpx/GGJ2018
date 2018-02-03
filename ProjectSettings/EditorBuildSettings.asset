@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Part_Straight.unity
     guid: f145a4ca2fe439f459333c96ca454f28
+  - enabled: 1
+    path: Assets/Scenes/SplitLake.unity
+    guid: f658f9a7ba13b834c9dcc70a2e94420c

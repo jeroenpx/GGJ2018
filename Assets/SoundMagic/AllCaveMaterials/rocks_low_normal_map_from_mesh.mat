@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AfterEffectFadeOutTime: 1
+    - _AfterEffectFadeOutTime: 10
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -74,7 +74,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PreviousTimeEnd: 0
-    - _PreviousTimeStart: -1000
+    - _PreviousTimeStart: 30.75503
     - _SineDistance: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -82,17 +82,18 @@ Material:
     - _SpeedInterference: 2
     - _SrcBlend: 1
     - _TimeEnd: 0
-    - _TimeManual: 0.99195933
+    - _TimeManual: 39.748573
     - _TimeSpeed: 10
-    - _TimeStart: -1000
+    - _TimeStart: 36.557587
     - _UVSec: 0
     - _WaveEffectTime: 0.5
     - _ZWrite: 1
     m_Colors:
-    - _Back: {r: 0.08099047, g: 0.08931659, b: 0.102941155, a: 1}
+    - _Back: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmitMult: {r: 0, g: 0, b: 0, a: 1}
-    - _Front: {r: 0.15700692, g: 0.21784098, b: 0.24264705, a: 1}
+    - _Front: {r: 0.19117647, g: 0.19117647, b: 0.19117647, a: 1}
     - _LocalAlwaysLightColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SourcePoint: {r: -161.27, g: 0, b: 8.862547, a: 0}
+    - _SourcePoint: {r: -176.84267, g: 1.295917, b: 227.30714, a: 0}
+    - _WaveColor: {r: 0, g: 1, b: 1, a: 1}

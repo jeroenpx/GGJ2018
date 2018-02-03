@@ -10,6 +10,7 @@ public class CrystalControl : MonoBehaviour {
 
 
 	private float maxIntensity;
+	private float maxRange;
 	private Color[] originalColors;
 
 	public AnimationCurve activationEffect;
@@ -21,6 +22,7 @@ public class CrystalControl : MonoBehaviour {
 		affectedMesh = affectedMeshObject.GetComponent<MeshFilter> ().mesh;
 
 		maxIntensity = affectedlight.intensity;
+		maxRange = affectedlight.range;
 		int vCount = affectedMesh.vertexCount;
 		Color[] colors = affectedMesh.colors;
 		if (vCount != colors.Length) {
@@ -50,6 +52,7 @@ public class CrystalControl : MonoBehaviour {
 
 		// 2. Set Intensity of Light
 		affectedlight.intensity = maxIntensity*percentActivation;
+		affectedlight.range = maxRange*percentActivation;
 	}
 
 	public void Activate(float percent) {

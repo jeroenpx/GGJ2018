@@ -11,6 +11,7 @@
 		// Color of the sine
 		_Front ("Front", Color) = (1,1,1,1)
 		_Back ("Back", Color) = (0,0,0,1)
+		_WaveColor ("_aveColor", Color) = (0,1,1,1)
 
 		// Settings for the sine
 		_SourcePoint ("SourcePoint", Vector) = (0, 0, 0, 0)
@@ -39,51 +40,8 @@
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types
 		#pragma surface surf Standard fullforwardshadows
-
-		// Use shader model 3.0 target, to get nicer looking lighting
-		#pragma target 3.0
-
-		#pragma shader_feature _NORMALMAP
-
-		sampler2D _MainTex;
-		sampler2D _BumpMap;
-
-		struct Input {
-			float2 uv_MainTex;
-        	float2 uv_BumpMap;
-		};
-
-		half _Glossiness;
-		half _Metallic;
-		fixed4 _Color;
-
-		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-		// #pragma instancing_options assumeuniformscaling
-		UNITY_INSTANCING_CBUFFER_START(Props)
-			// put more per-instance properties here
-		UNITY_INSTANCING_CBUFFER_END
-
-		void surf (Input IN, inout SurfaceOutputStandard o) {
-			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c.rgb;
-			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
-        	o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
-		}
-		ENDCG
-
-		Blend DstColor Zero
-		//ZWrite Off
-
-		CGPROGRAM
-		// Physically based Standard lighting model, and enable shadows on all light types
-		//#pragma surface surf Standard fullforwardshadows
 		//#pragma surface surf Lambert
-		#pragma surface surf Unlit
+		//#pragma surface surf Unlit
 
          #include "UnityCG.cginc" 
          
@@ -97,9 +55,24 @@
 		// Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0
 
+		#pragma shader_feature _NORMALMAP
+
+		sampler2D _MainTex;
+		sampler2D _BumpMap;
+
 		struct Input {
             float3 worldPos;
+			float2 uv_MainTex;
+        	float2 uv_BumpMap;
+			float4 vertexColor : COLOR;
 		};
+
+		half _Glossiness;
+		half _Metallic;
+		fixed4 _Color;
+		fixed4 _WaveColor;
+
+		fixed4 _EmitMult;
 
 		float4 _SourcePoint;
 		fixed4 _Front;
@@ -125,7 +98,10 @@
 			// put more per-instance properties here
 		UNITY_INSTANCING_CBUFFER_END
 
-		void surf (Input IN, inout SurfaceOutput o) {
+		void surf (Input IN, inout SurfaceOutputStandard o) {
+			// surface
+			fixed4 surface = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+
 
 			// 2*PI = 6.28
 
@@ -147,8 +123,9 @@
 			float startPointDist = _Speed*(_TimeManual-_TimeStart);
 			float endPointDist = _Speed*(_TimeManual-timeEnd);
 			if(curDistance<startPointDist && curDistance>endPointDist) {
-				o.Albedo = c.rgb;
-				o.Alpha = c.a;
+				o.Albedo = surface.rgb;//*(c.rgb);
+				o.Alpha = surface.a*(c.a);
+				o.Emission = IN.vertexColor*_EmitMult*surface.a*c.rgb+(c.rgb*1.6*_WaveColor);
 			} else if(curDistance>=startPointDist) {
 				float previousTimeEnd = _PreviousTimeStart + _WaveEffectTime;
 				float previousEndPointDist = _Speed*(_TimeManual-previousTimeEnd);
@@ -156,20 +133,26 @@
 					// Old after effect
 					float timeWavePassed = _TimeManual-previousTimeEnd;
 					float percentAfterEffect = saturate(1-timeWavePassed/_AfterEffectFadeOutTime);
-					o.Albedo = minBlackness.rgb + _Back.rgb * percentAfterEffect;
-					o.Alpha = minBlackness.a + _Back.a * percentAfterEffect;
+					o.Albedo = surface.rgb;//*(minBlackness.rgb + _Back.rgb * percentAfterEffect);
+					o.Alpha = surface.a;//*(minBlackness.a + _Back.a * percentAfterEffect);
 				} else {
 					// Too far away
-					o.Albedo = minBlackness.rgb;
-					o.Alpha = minBlackness.a;
+					o.Albedo = surface.rgb*(minBlackness.rgb);
+					o.Alpha = surface.a*(minBlackness.a);
 				}
+				o.Emission = IN.vertexColor*_EmitMult*surface.a;
 			} else {
 				// New after effect
 				float timeWavePassed = _TimeManual-timeEnd;
 				float percentAfterEffect = saturate(1-timeWavePassed/_AfterEffectFadeOutTime);
-				o.Albedo = minBlackness.rgb + _Back.rgb * percentAfterEffect;
-				o.Alpha = minBlackness.a + _Back.a * percentAfterEffect;
+				o.Albedo = surface.rgb;//*(minBlackness.rgb + _Back.rgb * percentAfterEffect);
+				o.Alpha = surface.a;//*(minBlackness.a + _Back.a * percentAfterEffect);
+				o.Emission = IN.vertexColor*_EmitMult*surface.a;
 			}
+
+			o.Metallic = _Metallic;
+			o.Smoothness = _Glossiness;
+			o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
 		}
 		ENDCG
 	}

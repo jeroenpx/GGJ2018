@@ -26,7 +26,7 @@ public class ImportScenes : MonoBehaviour
 	void AddPiece() {
 		if (!loading) {
 			loading = true;
-			int piece = Random.Range (0, availablePieces.Count - 1);
+			int piece = Random.Range (0, availablePieces.Count);
 			SceneManager.LoadScene (availablePieces [piece], LoadSceneMode.Additive);
 		}
 	}
